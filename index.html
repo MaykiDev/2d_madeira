@@ -69,23 +69,63 @@
     <!-- ==================== MAIN ==================== -->
     <main>
 
-        <!-- ========== HERO / HOME ========== -->
-        <section class="hero" id="home">
-            <div class="hero__overlay"></div>
-            <div class="hero__container">
-                <h1 class="hero__titulo">Beleza que Respeita<br>a Natureza</h1>
-                <p class="hero__subtitulo">
-                    Transformamos resíduos florestais em energia limpa com o <strong>Cavergy</strong> e criamos revestimentos modulares sofisticados com o <strong>FlexDeck</strong>. Tudo com madeira nativa brasileira de Manejo Florestal Sustentável.
-                </p>
-                <div class="hero__botoes">
-                    <a href="cavergy/cavergy.html" class="btn btn--primario">Conheça o Cavergy</a>
-                    <a href="#flexdeck" class="btn btn--secundario">Descubra o FlexDeck</a>
+        <!-- ========== HERO / HOME (CARROSSEL) ========== -->
+        <section class="hero-carousel" id="home">
+            <!-- Slide 1: Geral -->
+            <div class="hero-carousel__slide hero-carousel__slide--ativo" style="background-image: linear-gradient(135deg, rgba(26, 46, 27, 0.7) 0%, rgba(39, 61, 40, 0.7) 100%), url('https://placehold.co/1920x1080/273D28/FFFFFF?text=Natureza');">
+                <div class="hero-carousel__container">
+                    <h1 class="hero-carousel__titulo">Beleza que Respeita<br>a Natureza</h1>
+                    <p class="hero-carousel__subtitulo">
+                        Transformamos resíduos florestais em energia limpa com o <strong>Cavergy</strong> e criamos revestimentos modulares sofisticados com o <strong>FlexDeck</strong>. Tudo com madeira nativa brasileira de Manejo Florestal Sustentável.
+                    </p>
+                    <div class="hero-carousel__botoes">
+                        <a href="cavergy/cavergy.html" class="btn btn--primario">Conheça o Cavergy</a>
+                        <a href="#flexdeck" class="btn btn--secundario">Descubra o FlexDeck</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Slide 2: Cavergy -->
+            <div class="hero-carousel__slide" style="background-image: linear-gradient(135deg, rgba(26, 46, 27, 0.7) 0%, rgba(39, 61, 40, 0.7) 100%), url('https://placehold.co/1920x1080/273D28/FFFFFF?text=Cavergy+Biomassa');">
+                <div class="hero-carousel__container">
+                    <h2 class="hero-carousel__titulo">Energia Limpa que<br>Move a Indústria</h2>
+                    <p class="hero-carousel__subtitulo">
+                        O <strong>Cavergy</strong> é uma biomassa de alto desempenho que transforma resíduos florestais em energia limpa, promovendo eficiência e redução de emissões.
+                    </p>
+                    <div class="hero-carousel__botoes">
+                        <a href="cavergy/cavergy.html" class="btn btn--primario">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: FlexDeck -->
+            <div class="hero-carousel__slide" style="background-image: linear-gradient(135deg, rgba(89, 48, 39, 0.7) 0%, rgba(122, 66, 55, 0.7) 100%), url('https://placehold.co/1920x1080/593027/FFFFFF?text=FlexDeck+Design');">
+                <div class="hero-carousel__container">
+                    <h2 class="hero-carousel__titulo">Sofisticação que se<br>Encaixa na Natureza</h2>
+                    <p class="hero-carousel__subtitulo">
+                        O <strong>FlexDeck</strong> oferece revestimentos modulares de madeiras nobres, unindo praticidade e versatilidade para ambientes exigentes.
+                    </p>
+                    <div class="hero-carousel__botoes">
+                        <a href="#flexdeck" class="btn btn--flexdeck">Ver FlexDeck</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles -->
+            <button class="hero-carousel__controle hero-carousel__controle--prev" aria-label="Slide anterior">&#10094;</button>
+            <button class="hero-carousel__controle hero-carousel__controle--next" aria-label="Próximo slide">&#10095;</button>
+
+            <!-- Indicadores -->
+            <div class="hero-carousel__indicadores">
+                <button class="hero-carousel__indicador hero-carousel__indicador--ativo" aria-label="Ir para o slide 1"></button>
+                <button class="hero-carousel__indicador" aria-label="Ir para o slide 2"></button>
+                <button class="hero-carousel__indicador" aria-label="Ir para o slide 3"></button>
+            </div>
+
             <!-- Scroll indicator -->
-            <div class="hero__scroll" aria-hidden="true">
-                <span class="hero__scroll-texto">Role para explorar</span>
-                <span class="hero__scroll-seta">↓</span>
+            <div class="hero-carousel__scroll" aria-hidden="true">
+                <span class="hero-carousel__scroll-texto">Role para explorar</span>
+                <span class="hero-carousel__scroll-seta">↓</span>
             </div>
         </section>
 

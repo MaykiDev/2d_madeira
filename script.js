@@ -150,6 +150,61 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarLinkAtivo();
     atualizarHeaderSombra();
 
+    // ==================== HERO CAROUSEL ====================
+    const carouselSlides = document.querySelectorAll('.hero-carousel__slide');
+    const carouselIndicadores = document.querySelectorAll('.hero-carousel__indicador');
+    const prevBtn = document.querySelector('.hero-carousel__controle--prev');
+    const nextBtn = document.querySelector('.hero-carousel__controle--next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    if (carouselSlides.length > 0) {
+        function showSlide(index) {
+            carouselSlides.forEach((slide, i) => {
+                slide.classList.remove('hero-carousel__slide--ativo');
+                if (carouselIndicadores[i]) {
+                    carouselIndicadores[i].classList.remove('hero-carousel__indicador--ativo');
+                }
+            });
+            carouselSlides[index].classList.add('hero-carousel__slide--ativo');
+            if (carouselIndicadores[index]) {
+                carouselIndicadores[index].classList.add('hero-carousel__indicador--ativo');
+            }
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let index = (currentSlide + 1) % carouselSlides.length;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            let index = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+            showSlide(index);
+        }
+
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+
+        carouselIndicadores.forEach((ind, i) => {
+            ind.addEventListener('click', () => {
+                showSlide(i);
+                resetInterval();
+            });
+        });
+
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        startInterval();
+    }
+
     // Ano dinâmico no rodapé
     const anoAtualSpan = document.getElementById('anoAtual');
     if (anoAtualSpan) {
