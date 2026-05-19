@@ -701,7 +701,7 @@ strong {
 .funcionalidades__item {
     display: flex;
     gap: 14px;
-    align-items: flex-start;
+    align-items: center;
     padding: 14px 16px;
     background-color: var(--cor-branco);
     border-radius: 10px;
@@ -721,7 +721,7 @@ strong {
 .funcionalidades__icone {
     font-size: 1.5rem;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 0;
 }
 
 .funcionalidades__item strong {
@@ -765,35 +765,58 @@ strong {
 
 .prova-social__certificacoes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 24px;
-    margin-bottom: 48px;
-    max-width: 700px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.certificacao {
-    text-align: center;
+.certificacao-moderna {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #ffffff, #f5f0eb);
+    border: 1px solid rgba(39, 61, 40, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 20px;
 }
 
-.certificacao__selo {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 12px;
+.certificacao-moderna:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(39, 61, 40, 0.1);
+    border-color: rgba(39, 61, 40, 0.3);
+}
+
+.certificacao-moderna__icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(39, 61, 40, 0.08);
+    color: var(--cor-primaria);
     border-radius: 50%;
-    overflow: hidden;
-    box-shadow: var(--sombra);
+    flex-shrink: 0;
 }
 
-.certificacao__selo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.certificacao-moderna__conteudo {
+    text-align: left;
 }
 
-.certificacao__texto {
-    font-size: 0.85rem;
+.certificacao-moderna__titulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.certificacao-moderna__texto {
+    font-size: 0.9rem;
     color: var(--cor-texto-claro);
     line-height: 1.4;
 }
